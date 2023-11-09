@@ -1,4 +1,4 @@
 # Mordred
 Team Mordred's Starter Project
-<u>Team Members:</u>
+*Team Members*:
 Scott McHaffie
