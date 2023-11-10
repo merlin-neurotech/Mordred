@@ -2,5 +2,5 @@
 **Team Mordred's Starter Project**
 
 *Team Members*:  
-Scott McHaffie
+Scott McHaffie  
 Anders Lossius
