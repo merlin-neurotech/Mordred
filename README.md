@@ -3,6 +3,7 @@
 
 *Team Members*:  
 Scott McHaffie
-Harry Shalit
-Audrey Choi
-Karsen Faller
+Harry Shalit  
+Audrey Choi  
+Karsen Faller  
+Arjun Mauji  
