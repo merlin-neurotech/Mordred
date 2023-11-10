@@ -4,3 +4,4 @@
 *Team Members*:  
 Scott McHaffie
 Harry Shalit
+Audrey Choi
