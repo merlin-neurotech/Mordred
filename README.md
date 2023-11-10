@@ -2,7 +2,7 @@
 **Team Mordred's Starter Project**
 
 *Team Members*:  
-Scott McHaffie
+Scott McHaffie  
 Harry Shalit  
 Audrey Choi  
 Karsen Faller  
