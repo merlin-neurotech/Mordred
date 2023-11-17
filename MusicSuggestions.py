@@ -11,10 +11,10 @@ import matplotlib.image as mpimg
 import numpy as np
 import time
 
-clb = lambda stream:  BCI_tools.band_power_calibrator(stream, ['EEG 1', 'EEG 2', 'EEG 3', 'EEG 4', 'EEG 5', 'EEG 6', 'EEG 7', 'EEG 8'], 'unicorn', bands=['all'],
+clb = lambda stream:  BCI_tools.band_power_calibrator(stream, ['EEG 1', 'EEG 2', 'EEG 3', 'EEG 4', 'EEG 5', 'EEG 6', 'EEG 7', 'EEG 8'], 'unicorn', bands=['beta'],
                                                         percentile=5, recording_length=10, epoch_len=1, inter_window_interval=0.25)
 
-gen_tfrm = lambda buffer, clb_info: BCI_tools.band_power_transformer(buffer, clb_info, ['EEG 1', 'EEG 2', 'EEG 3', 'EEG 4', 'EEG 5', 'EEG 6', 'EEG 7', 'EEG 8'], 'unicorn', bands=['all'],
+gen_tfrm = lambda buffer, clb_info: BCI_tools.band_power_transformer(buffer, clb_info, ['EEG 1', 'EEG 2', 'EEG 3', 'EEG 4', 'EEG 5', 'EEG 6', 'EEG 7', 'EEG 8'], 'unicorn', bands=['beta'],
                                                         epoch_len=1)
 
 global xs, EEG1, EEG2, EEG3, EEG4, EEG5, EEG6, EEG7, EEG8                                                   
@@ -49,3 +49,11 @@ def clf(clf_input, clb_info):
     binary_label, {True: 'HIGH', False: 'LOW'})
  
     return label
+
+streams1 = resolve_stream("name='Unicorn'")
+inlet = StreamInlet(streams1[0])
+stream = streams.lsl_stream(inlet, buffer_length=1024)
+
+GPT_Generic = generic_BCI(clf, transformer=gen_tfrm, action=print, calibrator=clb)
+GPT_Generic.calibrate(stream)
+GPT_Generic.run(stream)
