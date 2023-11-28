@@ -14,6 +14,10 @@ import time
 
 print("Enter the calibration period (in seconds).")
 calib_time = input()
+print("Enter a wave type ('theta', 'alpha_low', 'alpha_high', 'beta', 'gamma')")
+wave_type = input()
+
+#can include later but where it currently says 'beta' , 'alpha_low' change to wave_type
 
 
 clb = lambda stream:  BCI_tools.band_power_calibrator(stream, ['EEG 1', 'EEG 2', 'EEG 3', 'EEG 4', 'EEG 5', 'EEG 6', 'EEG 7', 'EEG 8'], 'unicorn', bands=['beta', 'alpha_low'],
