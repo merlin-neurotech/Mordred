@@ -8,14 +8,15 @@ def find_song(wave_flag):
 
 feelings_to_songs = {
     #Theta waves 
-    "Lethargic": ["Happy - Pharrell Williams"],
+    "Sleepy": ["intermezzo_pietro","rise_lunarskybox","ivory_trxxshed","words_gregoryalan","jetelaisserai_patrickwatson",""],
+
     "Awake": ["Someone Like You - Adele"],
     #Alpha waves
-    "Focused": ["screamsaver_subtronics", "thelastgoodbye_odesza"],
-    "NotFocused": ["Weightless - Marconi Union"],
+    "Focused": ["screamsaver_subtronics", "thelastgoodbye_odesza","makeithappen_rufus","thedifference_flume","pianosonatanumber9_mozart"],
+    "NotFocused": ["partyintheusa_mileycyrus",],
     #Beta waves
     #Classical
-    "Calm": ["Break Stuff - Limp Bizkit"],
+    "Chill": ["Break Stuff - Limp Bizkit"],
     #EDM
     "Pumped": ["Summer of '69 - Bryan Adams"],
     #Gamma waves
