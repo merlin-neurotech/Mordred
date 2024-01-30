@@ -38,8 +38,10 @@ EEG6 = []
 EEG7 = []
 EEG8 = []
 
+
+binary_label_arr = []
 def clf(clf_input, clb_info):
-    print ("clb info: ", clb_info)
+    #print ("clb info: ", clb_info)
 
     clf_input = clf_input[:clb_info.shape[0]]
 
@@ -57,13 +59,18 @@ def clf(clf_input, clb_info):
 
     label = classification_tools.decode_prediction(
     binary_label, {True: 'HIGH', False: 'LOW'})
+    print ("Label is:", label)
+    #binary_label_arr.append(label)
+    exit()
  
     return label
 
+print (len(binary_label_arr))
 streams1 = resolve_stream("name='Unicorn'")
 inlet = StreamInlet(streams1[0])
 stream = streams.lsl_stream(inlet, buffer_length=1024)
 
 GPT_Generic = generic_BCI(clf, transformer=gen_tfrm, action=print, calibrator=clb)
+print ("Did we get here???\n")
 GPT_Generic.calibrate(stream)
 GPT_Generic.run(stream)

@@ -45,5 +45,7 @@ print (arrKey+"/"+feelings_to_songs[arrKey][n]+".mp3", "\n")
 feelings_to_songs[arrKey].pop(n)
 print (feelings_to_songs[arrKey])
 
+#playedSongs = []
+
 
 
